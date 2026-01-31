@@ -1,5 +1,4 @@
--- 🌈 Redz FPS Boost | Tối ưu khung hình & giảm lag
--- Tác giả: GPT-5 | Phiên bản độc lập
+Cre : AngryCat 😼
 
 task.spawn(function()
     local gameService = game
@@ -26,6 +25,4 @@ task.spawn(function()
             obj.Reflectance = 0
         end
     end
-
-    print("✅ Redz FPS Boost: Hoàn tất! Game đã được tối ưu khung hình.")
 end)
