@@ -1,0 +1,31 @@
+-- 🌈 Redz FPS Boost | Tối ưu khung hình & giảm lag
+-- Tác giả: GPT-5 | Phiên bản độc lập
+
+task.spawn(function()
+    local gameService = game
+    local workspaceService = gameService.Workspace
+    local lightingService = gameService.Lighting
+    local terrain = workspaceService.Terrain
+
+    settings().Rendering.QualityLevel = "Level01"
+
+    for _, obj in pairs(gameService:GetDescendants()) do
+        if not obj:IsA("Part") and not obj:IsA("UnionOperation") and not obj:IsA("CornerWedgePart") and not obj:IsA("TrussPart") then
+            if obj:IsA("Decal") or obj:IsA("Texture") then
+                obj.Transparency = 1
+            elseif obj:IsA("ParticleEmitter") or obj:IsA("Trail") then
+                obj.Lifetime = NumberRange.new(0)
+            elseif obj:IsA("Explosion") then
+                obj.BlastPressure = 1
+                obj.BlastRadius = 1
+            elseif obj:IsA("Fire") or obj:IsA("SpotLight") or obj:IsA("Smoke") then
+                obj.Enabled = false
+            end
+        else
+            obj.Material = Enum.Material.Plastic
+            obj.Reflectance = 0
+        end
+    end
+
+    print("✅ Redz FPS Boost: Hoàn tất! Game đã được tối ưu khung hình.")
+end)
